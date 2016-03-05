@@ -69,6 +69,11 @@
                                 <i class="fa fa-btn fa-facebook"></i>Login
                                 </button>
                             </a>
+                            <a href="redirect/twitter">
+                                <button class="btn btn-secondary">
+                                <i class="fa fa-btn fa-twitter"></i>Login
+                                </button>
+                            </a>
                         </div>
                     </div> 
                 </div>

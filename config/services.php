@@ -45,6 +45,12 @@ return [
         'client_id'     => '393407644084856',
         'client_secret' => 'cfb2de296ee2647cfaf8a0657d1c0ee9',
         'redirect'      => 'http://localhost/learn/laravel-socialite/public/callback/facebook',
+    ],
+
+    'twitter' => [
+        'client_id'     => 'JRTiP6iRBg2j0tlC7PLHMHFHM',
+        'client_secret' => 'LmchE8WEJkEZ04otKeUXXSGcjvcMwQ71hhbwK3HGZ7NVnCEZOZ',
+        'redirect'      => 'http://localhost/learn/laravel-socialite/public/callback/twitter',
     ]
 
 ];
