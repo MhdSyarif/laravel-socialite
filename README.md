@@ -1,2 +1,2 @@
-# laravel-socialite
+# Social Login Package for Laravel 5.2
 Login Laravel with Google, Facebook, Twitter
