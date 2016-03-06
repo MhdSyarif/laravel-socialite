@@ -10,7 +10,7 @@
                 <div class="panel-body">
                     <h2>Welcome : {{ Auth::user()->name }}</h2>
                     <p>Email : {{ Auth::user()->email }}</p>
-                    You are logged in! 
+                    You are logged in ! 
                 </div>
             </div>
         </div>
