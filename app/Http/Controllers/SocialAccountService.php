@@ -16,7 +16,6 @@ class SocialAccountService
 		$account = SocialAccount::whereProvider($providerName)
 			->whereProviderUserId($providerUser->getId())
 			->first();
-
 		if($account):
 			return $account->user;
 		else : 
@@ -26,6 +25,7 @@ class SocialAccountService
 			]);
 		
 			$user = User::whereEmail($providerUser->getEmail())->first();
+			// $user = SocialAccount::whereId($providerUser->getId())->first();
 
 			if(!$user):
 				$user = User::create([
