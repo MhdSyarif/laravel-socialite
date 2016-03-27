@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use DB;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 
@@ -24,6 +25,23 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $counts = DB::table('users')->count();
+        $users = DB::table('users')
+        ->leftjoin('social_accounts','users.id','=', 'social_accounts.user_id')
+        // ->where('social_accounts.provider','<>', 'NULL')
+        ->paginate(3);
+
+        return view('home', ['users' => $users],['counts'=>$counts]);
+    }
+
+    public function view()
+    {
+        $counts = DB::table('users')->count();
+        $users = DB::table('users')
+        ->leftjoin('social_accounts','users.id','=', 'social_accounts.user_id')
+        // ->where('social_accounts.provider','<>', 'NULL')
+        ->paginate(3);
+
+        return view('welcome', ['users' => $users],['counts'=>$counts]);
     }
 }

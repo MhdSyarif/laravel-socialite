@@ -11,9 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -33,9 +35,10 @@ Route::group(['middleware' => ['web']], function () {
 Route::group(['middleware' => 'web'], function () {
     Route::auth();
 
+    Route::get('/', 'WelcomeController@index');
+
     Route::get('/home', 'HomeController@index');
     
 	Route::get('/redirect/{provider}', 'SocialAuthController@redirect');
 	Route::get('/callback/{provider}', 'SocialAuthController@callback');
 });
-
