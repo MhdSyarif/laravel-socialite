@@ -33,15 +33,4 @@ class HomeController extends Controller
 
         return view('home', ['users' => $users],['counts'=>$counts]);
     }
-
-    public function view()
-    {
-        $counts = DB::table('users')->count();
-        $users = DB::table('users')
-        ->leftjoin('social_accounts','users.id','=', 'social_accounts.user_id')
-        // ->where('social_accounts.provider','<>', 'NULL')
-        ->paginate(3);
-
-        return view('welcome', ['users' => $users],['counts'=>$counts]);
-    }
 }
